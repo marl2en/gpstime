@@ -34,10 +34,10 @@ sudo systemctl status -l gpsd.socket
 sudo systemctl status -l gpsd.service
 
 # check GPS data:
-cat /dev/ttyACM0
-cgps    
-gpsmon -n  
-xgps 127.0.0.1:2947
+* cat /dev/ttyACM0
+* cgps    
+* gpsmon -n  
+* xgps 127.0.0.1:2947
 
 # How to use:
 copy gpstime.py and gpstime.sh to home/pi
