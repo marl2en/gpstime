@@ -7,7 +7,7 @@ Spending hours trying to use gps time as source for  chrony or ntp I finally gav
  # Requirement:
     • Rpi (tested on Rpi 3+ and Rpi 4
     • a cheap GPS-USB Dongle
-    • Python libraries: pip3 install smbus2
+
 
 
 Use this software at your own risk. 
