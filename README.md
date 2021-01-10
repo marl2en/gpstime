@@ -15,21 +15,21 @@ Use this software at your own risk.
 
 # Install:
 Plug the GPS dongle into a USB port.
-lsusb: “Bus 001 Device 010: ID 1546:01a7 U-Blox AG [u-blox 7]”
-dmesg: look for something like: “/dev/ttyACM0″
+* lsusb: “Bus 001 Device 010: ID 1546:01a7 U-Blox AG [u-blox 7]”
+* dmesg: look for something like: “/dev/ttyACM0″
 
 
-sudo apt-get install gpsd-clients gpsd python-gps
-sudo apt-get install chrony (or ntp)
+* sudo apt-get install gpsd-clients gpsd python-gps
+* sudo apt-get install chrony (or ntp)
 
-sudo nano /etc/default/gpsd
+* sudo nano /etc/default/gpsd
 START_DAEMON=”true”
 USBAUTO=”true”
 DEVICES=”/dev/ttyACM0″
 GPSD_OPTIONS=”-n”
 
-reboot
-check status:
+* reboot
+* check status:
 sudo systemctl status -l gpsd.socket
 sudo systemctl status -l gpsd.service
 
@@ -41,11 +41,11 @@ sudo systemctl status -l gpsd.service
 
 # How to use:
 copy gpstime.py and gpstime.sh to home/pi
-create a cron job: crontab -e
+* create a cron job: crontab -e
 */15 * * * * sudo /home/pi/gpstime.sh # >/dev/null 2>&1
 
 Adjust your settings in  gpstime.py like polling interval, running time, maximum time offset to trigger time reset etc. 
 Look at log file:
-cat home/pi/gpstime.log 
+* cat home/pi/gpstime.log 
 
 Have a nice day. 
